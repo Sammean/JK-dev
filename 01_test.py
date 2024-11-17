@@ -9,6 +9,7 @@
 @Desc   ：
 ==================================================
 """
+import os
 import pytest  # 导入pytest模块
 import allure
 
@@ -27,4 +28,5 @@ class TestUnit():  # 测试套件
 
 if __name__ == "__main__":
     pytest.main(["-s", "01_test.py",
-                 "--alluredir", "reports"])
+                 "--alluredir", "reports", "--clean-alluredir"])
+    # os.system("allure server ./reports")
